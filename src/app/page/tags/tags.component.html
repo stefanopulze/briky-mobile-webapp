@@ -1,0 +1,11 @@
+<div class="view">
+  <app-header title="Tags">
+    <expense-header-icon></expense-header-icon>
+  </app-header>
+
+  <div class="table">
+    <div class="table-cell" *ngFor="let tag of tags" (click)="editTag(tag)" >
+      {{tag.name}}
+    </div>
+  </div>
+</div>

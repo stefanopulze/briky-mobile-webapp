@@ -1,0 +1,18 @@
+<header class="header">
+  <header-icon iconName="menu" (click)="openNavigationMenu()"></header-icon>
+
+  <div>{{title}}</div>
+
+  <div class="header-icons">
+    <ng-content></ng-content>
+  </div>
+</header>
+
+<nav class="header-navigation" [class.open]="isMenuOpen">
+  <ul>
+    <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['current']">Dashboard</a></li>
+    <li><a [routerLink]="['/tags']" [routerLinkActive]="['current']">Tags</a></li>
+    <li><a [routerLink]="['/profile']" [routerLinkActive]="['current']">Profile</a></li>
+    <li><a [routerLink]="['/settings']" [routerLinkActive]="['current']">Settings</a></li>
+  </ul>
+</nav>

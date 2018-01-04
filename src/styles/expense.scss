@@ -1,0 +1,59 @@
+.table-cell {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+
+  .additional {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    transform: translate(100px, 0);
+    transition: transform .3s ease-in-out;
+
+    .btn {
+      border-radius: 0;
+      height: 100%;
+    }
+
+    &.show {
+      transform: translate(0,0);
+    }
+  }
+}
+
+.expense-cell {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+
+
+  >:nth-child(1) {
+    flex: 1;
+  }
+
+  >:nth-child(2) {
+    text-align: right;
+  }
+
+  .tag {
+    display: block;
+  }
+
+  .description {
+    font-size: .9em;
+    color: #444;
+  }
+
+  .value {
+    display: block;
+  }
+
+  .date {
+    font-size: .8em;
+    color: #444;
+  }
+
+}

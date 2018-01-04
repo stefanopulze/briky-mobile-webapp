@@ -1,0 +1,61 @@
+@import "colors";
+
+.view {
+  padding-top: 60px;
+
+
+  &-content {
+    padding: 20px;
+  }
+
+  &-hero {
+    text-align: center;
+    background: $heroBackground;
+    padding: 20px;
+  }
+
+}
+
+.hero-info {
+  display: flex;
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  padding-top: 20px;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.expense-cell-two-line {
+
+  .title {
+    color: $heroTitleColor;
+    font-size: .9em;
+    display: block;
+  }
+
+  .detail {
+    color: $heroDetailColor;
+    display: block;
+    font-weight: bold;
+
+    &-large {
+      font-size: 2em;
+    }
+
+    &-x-large {
+      font-size: 3em;
+    }
+  }
+}
+
+.info {
+  font-size: .9em;
+  text-align: center;
+  color: #999;
+
+  &-warning {
+    color: #ff6b6b;
+  }
+}

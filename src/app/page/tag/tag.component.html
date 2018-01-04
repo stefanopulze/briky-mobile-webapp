@@ -1,0 +1,25 @@
+<section class="view">
+  <app-header title="Tag">
+    <img src="assets/icons/save.png" class="header-icon" (click)="saveTag()">
+  </app-header>
+
+
+  <form #form class="view-hero">
+    <div class="field">
+      <input class="large" type="text" [(ngModel)]="tag.name" name="name" required>
+    </div>
+  </form>
+
+
+  <div class="view-content" *ngIf="detail">
+
+  </div>
+
+
+  <div class="view-content" *ngIf="tag.id">
+    <button class="btn btn-delete btn-full" (click)="deleteTag()" [disabled]="saving">Elimina</button>
+    <p class="info info-warning">Attenzione, non viene chiesta nessuna conferma prima della cancellazione.</p>
+  </div>
+
+
+</section>

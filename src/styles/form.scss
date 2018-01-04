@@ -1,0 +1,27 @@
+.field {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #ccc;
+
+    &.large {
+      font-size: 2em;
+      text-align: center;
+      border-width: 0 0 2px 0;
+
+      &:focus {
+        border-color: #444;
+      }
+    }
+  }
+}

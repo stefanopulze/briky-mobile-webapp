@@ -1,0 +1,31 @@
+.btn {
+
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 1em;
+
+  &-full {
+    width: 100%;
+  }
+
+  &-delete {
+    background: #FF6B6B;
+    color: #fff;
+  }
+
+  &-header {
+    border: none;
+    background: transparent;
+
+    &:disabled > * {
+      color: #ccc;
+    }
+  }
+}
+
+

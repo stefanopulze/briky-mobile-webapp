@@ -1,0 +1,40 @@
+<div class="view">
+
+  <app-header title="Expense">
+    <header-icon iconName="salvadanaio"
+                 [disabled]="!form.valid"
+                 (click)="saveExpense()"></header-icon>
+  </app-header>
+
+  <form #form="ngForm" class="view-content">
+    <div class="field">
+      <label>Valore *</label>
+      <input type="number" [(ngModel)]="expense.value" name="value" required>
+    </div>
+
+    <div class="field">
+      <label>Descrizione *</label>
+      <input type="text" [(ngModel)]="expense.description" name="description" required>
+    </div>
+
+    <div class="field">
+      <label>Tag *</label>
+      <input type="text" [(ngModel)]="tempTagName" name="tag" required>
+    </div>
+
+    <div class="field">
+      <label>Quando</label>
+      <input type="date" [(ngModel)]="expense.createdAt" name="createdAt">
+    </div>
+
+    <p *ngIf="!form.valid" class="info">Compilare i campi per poter salvare</p>
+
+    <div *ngIf="expense.id">
+      <button class="btn btn-delete btn-full" (click)="deleteExpense()" [disabled]="saving">Elimina</button>
+      <p class="info info-warning">Attenzione, non viene chiesta nessuna conferma prima della cancellazione.</p>
+    </div>
+
+
+  </form>
+
+</div>

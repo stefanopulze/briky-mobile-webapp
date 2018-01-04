@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+  <p>
+    <input type="email" placeholder="email" formControlName="email">
+  </p>
+
+  <p>
+    <input type="password" placeholder="Password" formControlName="password">
+  </p>
+
+  <button type="submit" (click)="login()">Login</button>
+
+</form>

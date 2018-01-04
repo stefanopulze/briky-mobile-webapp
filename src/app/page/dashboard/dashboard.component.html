@@ -1,0 +1,42 @@
+<div class="view">
+
+  <app-header title="Dashboard">
+    <header-icon iconName="sincronizzare" (click)="refresh()"></header-icon>
+    <expense-header-icon></expense-header-icon>
+  </app-header>
+
+  <div class="view-hero">
+    <div class="expense-cell-two-line">
+      <span class="title">Spesa Mensile</span>
+      <span class="detail detail-x-large">{{data.currentMonthValue | euro}}</span>
+    </div>
+
+
+    <div class="hero-info">
+      <div class="expense-cell-two-line">
+        <span class="title">Andamento</span>
+        <span class="detail">{{data.currentMonthValue - data.previousMonthValue| euro}}</span>
+      </div>
+
+      <div class="expense-cell-two-line">
+        <span class="title">Mese precedente</span>
+        <span class="detail">{{data.previousMonthValue | euro}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="view-content">
+    <div *ngFor="let expense of data.lastExpenses" class="expense-cell" (click)="editExpense(expense)">
+      <div>
+        <span class="tag">{{expense.$tag}}</span>
+        <span class="description">{{expense.description}}</span>
+      </div>
+
+      <div>
+        <span class="value">{{expense.value | euro}}</span>
+        <span class="date">{{expense.createdAt | date}}</span>
+      </div>
+    </div>
+  </div>
+
+</div>

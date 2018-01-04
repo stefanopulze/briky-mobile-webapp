@@ -1,0 +1,64 @@
+@import "colors";
+
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+.header {
+  height: 40px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $heroBackground;
+
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 2px;
+}
+
+.header-icon {
+  width: 46px;
+  height: 40px;
+
+  vertical-align: middle;
+  font-size: 26px;
+  color: #999;
+  padding-top: 6px;
+
+  &.disabled {
+    color: #eee;
+  }
+}
+
+.header-icons {
+  display: flex;
+
+  .header-icon {
+    text-align: center;
+  }
+}
+
+.header-navigation {
+  background: #fff;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      padding: 16px 20px;
+      display: block;
+      border-bottom: 1px solid #ccc;
+      color: #4540AE;
+    }
+  }
+}

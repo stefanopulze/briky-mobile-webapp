@@ -15,7 +15,6 @@ export class ExpenseComponent implements OnInit {
   @Input() title: string
 
   expense: Expense = new Expense();
-  tempTagName: string;
   saving: boolean = false;
 
   constructor(private service: ExpenseService,
@@ -31,10 +30,6 @@ export class ExpenseComponent implements OnInit {
 
       if (this.dataService.expense) {
         this.expense = this.dataService.expense;
-
-        if(this.expense.tags.length > 0) {
-          this.tempTagName = this.expense.tags[0].name;
-        }
       }
 
     }
@@ -55,20 +50,14 @@ export class ExpenseComponent implements OnInit {
 
     if (this.expense.id) {
       // Update
-      if(this.expense.tags.length > 0) {
-        if(this.expense.tags[0].name !== this.tempTagName) {
-          this.expense.tags[0] = new Tag(this.tempTagName);
-        }
-      }
-
       this.service.update(this.expense).subscribe(data => {
         this.saving = false;
+        this.expense = data;
       }, error2 => {
         this.saving = false;
       });
     } else {
       // Create
-      this.expense.tags.push(new Tag(this.tempTagName));
       this.service.create(this.expense).subscribe(this.returnBackToDashboard.bind(this));
     }
 

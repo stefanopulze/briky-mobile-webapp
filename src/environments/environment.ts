@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  endpoint: 'https://briky-api.herokuapp.com'
+  endpoint: 'http://localhost:8080'
 };

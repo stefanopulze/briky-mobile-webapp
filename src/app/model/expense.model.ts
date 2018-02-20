@@ -1,4 +1,5 @@
 import {Tag} from "./tag.model";
+import {Category} from "./category.model";
 
 export class Expense {
 
@@ -9,6 +10,7 @@ export class Expense {
   longitude: number;
   accuracy: number;
   description: string;
+  category: Category = new Category();
   createdAt: Date;
   updatedAt: Date;
 

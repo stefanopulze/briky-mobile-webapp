@@ -13,18 +13,20 @@
     </div>
 
     <div class="field">
+      <label>Categoria *</label>
+      <input type="text" [(ngModel)]="expense.category.name" name="category" required>
+    </div>
+
+    <div class="field">
       <label>Descrizione *</label>
       <input type="text" [(ngModel)]="expense.description" name="description" required>
     </div>
 
-    <div class="field">
-      <label>Tag *</label>
-      <input type="text" [(ngModel)]="tempTagName" name="tag" required>
-    </div>
-
-    <div class="field">
-      <label>Quando</label>
-      <input type="date" [(ngModel)]="expense.createdAt" name="createdAt">
+    <div class="field" *ngIf="expense.tags && expense.tags.length > 0">
+      <label>Tags:</label>
+      <ul class="tags-list">
+        <li class="tag" *ngFor="let tag of expense.tags">{{tag.name}}</li>
+      </ul>
     </div>
 
     <p *ngIf="!form.valid" class="info">Compilare i campi per poter salvare</p>

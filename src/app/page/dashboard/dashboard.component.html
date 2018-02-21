@@ -28,7 +28,7 @@
   <div class="view-content">
     <div *ngFor="let expense of data.lastExpenses" class="expense-cell" (click)="editExpense(expense)">
       <div>
-        <span class="tag">{{expense.$tag}}</span>
+        <span class="tag">{{expense.category.name}}</span>
         <span class="description">{{expense.description}}</span>
       </div>
 
